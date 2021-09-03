@@ -12,6 +12,8 @@ import javax.persistence.OneToOne;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 @Entity
 public class Jogadores implements Serializable {
 
@@ -26,6 +28,7 @@ public class Jogadores implements Serializable {
 	@NotBlank
 	private String posicao;
 	@NotBlank
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
 	private String datanatalicia;
 	
 	private float altura;

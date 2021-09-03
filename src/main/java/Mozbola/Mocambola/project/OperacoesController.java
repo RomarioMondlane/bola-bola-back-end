@@ -62,7 +62,7 @@ public class OperacoesController {
 		System.out.println(e.toString());
 		User u=new User(e.getUsername(),pass.encode(e.getPassword()),e.isadmin);
 		
-		if(us.findByusername(u.getUsername())!=null ) {
+		if(us.findByUsername(u.getUsername())!=null ) {
 			
 			return new ResponseEntity<>("Usuario exsitente!",HttpStatus.OK);
 			

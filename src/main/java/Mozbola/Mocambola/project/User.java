@@ -1,6 +1,7 @@
 package Mozbola.Mocambola.project;
 
 import java.io.Serializable;
+import java.util.Collection;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,10 +11,13 @@ import javax.persistence.Id;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
-public class User implements Serializable{
+public class User implements  Serializable{
 
 	private static final long serialVersionUID = 1L;
 	@Id
@@ -25,7 +29,7 @@ public class User implements Serializable{
 	@NotEmpty
 	@JsonIgnore
 	private String password;
-	@NotEmpty
+	
 	public boolean isadmin;
 	
 	
@@ -68,8 +72,5 @@ public class User implements Serializable{
 	public String toString() {
 		return "User [codigo=" + codigo + ", username=" + username + ", password=" + password + ", isadmin=" + isadmin
 				+ "]";
-	}
-	
-	
-	
+	}	
 }
